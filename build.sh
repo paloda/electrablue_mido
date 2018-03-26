@@ -66,7 +66,7 @@ FUNC_PACK()
         find . -type f -name "wlan.ko" | xargs cp -t $TEMP_DIR/modules
         find $TEMP_DIR -iname "wlan.ko" -exec /home/paloda/cocina/aarch64-cortex_a53-linux-gnueabi-gcc-7/bin/aarch64-cortex_a53-linux-gnueabi-strip- --strip-debug {} \;
 		cd $TEMP_DIR
-		zip -r9 PaLoDa-v1.zip ./*
+		zip -r9 PaLoDa-v1.5.zip ./*
 		mv palodakernel.zip $OUT_DIR/palodakernel-$DATE.zip
 		cd $ROOT_DIR
 		FUNC_PRINT "$Green Finish Packing $nocol"
@@ -78,5 +78,7 @@ FUNC_COMPILE_KERNEL
 FUNC_PACK
 END_TIME=`date +%s`
 
-let "ELAPSED_TIME=$END_TIME-$START_TIME"
+echo -e "$Yellow***********************************************"
+echo "let ELAPSED_TIME=$END_TIME-$START_TIME         "
 echo "Total compile time is $ELAPSED_TIME seconds"
+echo -e "***********************************************$nocol"
