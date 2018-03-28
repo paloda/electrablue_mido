@@ -80,5 +80,5 @@ END_TIME=`date +%s`
 
 echo -e "$Yellow***********************************************"
 echo "let ELAPSED_TIME=$END_TIME-$START_TIME         "
-echo "Total compile time is $ELAPSED_TIME seconds"
+echo "Total compile time is $ELAPSED_TIME minutes"
 echo -e "***********************************************$nocol"
